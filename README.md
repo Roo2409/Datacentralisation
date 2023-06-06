@@ -21,7 +21,7 @@ Methods used to extract data from each resources are: 1 An AWS RDS database - Fi
 Amazon S3: Boto3 is a Python library that provides a developer-friendly interface for interacting with Amazon Web Services (AWS). It is specifically designed for Python developers to write software that makes use of services like Amazon S3, Amazon EC2, and Amazon SQS. Once installed Boto3, it extract data from an S3 bucket in the Python code. Data extracted from S3 was converted into Json format.
 
 After all data was cleaned, it was uploaded into pg admin into 4 different tables and respective primary and foreign key was given to each table:
-
+![Pgadmin](C:\Users\User\Documents\Pgadmin.png)
 Milestone 3 : Create the database schema:
 Developed the star-base schema of database and ensuring that the columns are of the correct datatypes.
 
