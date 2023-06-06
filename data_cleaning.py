@@ -1,7 +1,7 @@
 
 from data_extraction import data_extractor
 from database_utils import data_connector
-import pandas as pd
+
 
 class Datacleaning:
      def clean_user_data(self):
@@ -71,19 +71,16 @@ class Datacleaning:
      
     
 cleaned_data = Datacleaning()
-# df = cleaned_data.clean_user_data()
-# # data_connector.upload_to_db(df, 'Dim_Users_details')
-# data_connector.upload_to_db(df, 'dim_users_details')
+df = cleaned_data.clean_user_data()
+data_connector.upload_to_db(df, 'dim_users_details')
 
 df_card_data= cleaned_data.clean_card_data()
-# # data_connector.upload_to_db(df_card_data,'Dim_cards_details')
 data_connector.upload_to_db(df_card_data,'dim_cards_details')
 
 clean_store = cleaned_data.called_clean_store_data()
-# # data_connector.upload_to_db(clean_store,'dim_stores_details')
 data_connector.upload_to_db(clean_store,'dim_stores_details')
 
-# order_table = cleaned_data.clean_orders_data()
-# data_connector.upload_to_db(order_table,'orders_table')
+order_table = cleaned_data.clean_orders_data()
+data_connector.upload_to_db(order_table,'orders_table')
 
 
