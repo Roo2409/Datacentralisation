@@ -1,0 +1,29 @@
+Task 1 : 
+SELECT country_code, 
+       COUNT(opening_date) AS total_number_of_stores
+FROM 
+    dim_stores_details
+GROUP BY 
+    country_code
+ORDER BY
+    total_number_of_stores DESC;
+
+Task 2 : 
+SELECT locality, 
+       COUNT(opening_date) AS total_number_of_stores
+FROM 
+    dim_stores_details
+GROUP BY 
+    locality
+ORDER BY
+    total_number_of_stores DESC;
+
+Task 3 : 
+SELECT country_code, 
+       COUNT(staff_numbers) AS total_number_of_staff
+FROM 
+    dim_stores_details
+GROUP BY 
+    country_code
+ORDER BY
+    total_number_of_staff DESC;
