@@ -24,6 +24,7 @@ After all data was cleaned, it was uploaded into pg admin into 4 different table
 
 Milestone 3 : Create the database schema:
 Developed the star-base schema of database and ensuring that the columns are of the correct datatypes.
+
 ![Pgadmin](https://github.com/Roo2409/Datacentralisation/assets/122916399/5f124d69-9a39-4453-a76b-f3be328182ce)
 
 Milestone 4: Query the data:
