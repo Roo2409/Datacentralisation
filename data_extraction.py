@@ -56,14 +56,7 @@ class Dataextractor:
 
     
     def extract_from_s3(self):
-        # s3 = boto3.resource('s3')
-        # my_bucket = s3.Bucket('data-handling-public')
-        # for file in my_bucket.objects.all():
-        #     print(file.key)
         s3_client = boto3.client('s3')
-        # s3_client.Bucket('data-handling-public.s3.eu-west-1.amazonaws.com').download_file(Key='date_details.json', Filename='s3_data.json')
-        # s3_data = pd.read_json('s3_data.json')#s3_client.download_file(Bucket = 'data-handling-public', Key = 'products.csv', Filename = 's3_data.csv'  )
-        #return s3_data
         result = s3_client.get_object(Bucket = 'data-handling-public', Key= 'date_details.json' )
         json_data = result['Body'].read()
         df_json = pd.read_json(BytesIO(json_data))
@@ -86,11 +79,6 @@ read_table = data_extractor.read_rds_table(table_name[0], engine)
 print(read_table)
 link = 'https://data-handling-public.s3.eu-west-1.amazonaws.com/card_details.pdf'
 data_extractor.retrieve_pdf_data(link)
-# no_of_stores:'https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/number_stores'
-# # print(no_of_stores)
-# headers :{ 'x-api-key' : 'yFBQbwXe9J3sd6zWVAMrK6lcxxr0q1lr2PT6DDMX'}
-# endpoint = data_extractor.list_number_of_stores('https://aqj7u5id95.execute-api.eu-west-1.amazonaws.com/prod/number_stores',{ 'x-api-key' : 'yFBQbwXe9J3sd6zWVAMrK6lcxxr0q1lr2PT6DDMX'})
-# # print(endpoint)
 read_data= data_extractor.retrieve_stores_data()
 print(read_data)
 aws = data_extractor.extract_from_s3()

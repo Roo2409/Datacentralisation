@@ -1,0 +1,45 @@
+Task 1 till 4 : Change the current Datatypes into the asked Datatypes: 
+
+Task 1 : SELECT *from orders_table;
+alter table orders_table
+alter column card_number TYPE VARCHAR(50),
+alter column store_code TYPE varchar (150),
+alter column product_code TYPE varchar (200),
+alter column product_quantity TYPE smallint,
+alter column date_uuid SET DATA TYPE UUID USING "date_uuid"::UUID,
+alter column user_uuid SET DATA TYPE UUID USING "user_uuid"::UUID;
+
+Task 2 : 
+alter table dim_users_details
+alter column first_name type varchar(255),
+alter column last_name TYPE varchar (255),
+alter column country_code TYPE varchar(150),
+alter column user_uuid SET DATA TYPE UUID USING "user_uuid"::UUID,
+alter column date_of_birth type date using date_of_birth::date;
+
+Task 3 : 
+alter table dim_stores_details
+alter column locality TYPE varchar (255),
+alter column store_code TYPE varchar(150),
+alter column store_type type varchar(255),
+alter column country_code TYPE varchar (255),
+alter column continent TYPE varchar(255)
+alter column staff_numbers type smallint USING staff_numbers::smallint,
+alter column longitude type float using longitude::float,
+alter column latitude type float using latitude::float,
+alter column opening_date type date using opening_date ::date ;
+
+Task 4 : 
+alter table dim_cards_details
+alter column card_number type varchar(200),
+alter column expiry_date type varchar (250),
+alter column date_payment_confirmed type date using date_payment_confirmed::date ;
+
+Task 5 : create the primary key in the demensions tables:
+alter table dim_users_details
+add primary key (user_uuid);
+alter table dim_stores_details
+add primary key (store_code);
+alter table dim_cards_details
+add primary key (card_number);
+
